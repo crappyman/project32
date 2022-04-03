@@ -1,0 +1,34 @@
+
+<div >
+    <form
+    *ngIf ="validToken; else invalidToken"
+    name="form"
+    (ngSubmit)=" onSubmit()"
+    #f="ngForm"
+    novalidate
+  >
+
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="password"
+        required
+        minlength="6"
+      />
+
+    </div>
+    <div class="form-group">
+      <button class="btn btn-danger btn-block">
+        Login
+      </button>
+    </div>
+   
+    
+   
+  </form>
+</div>
+<ng-template #invalidToken>Invalid Token</ng-template>
